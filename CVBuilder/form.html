@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+input[type=text] {
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  width: 70%;
+}
+textarea {
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  width: 70%;
+}
+</style>
+	<head>
+		<title>نموذج التعبئة</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+/*$(document).ready(function(){
+    $("fieldset:not(#div1)").hide();
+});*/
+
+</script>
+
+	</head>
+	<body>
+		<form method="POST" action="resume.php">
+			 <fieldset class="sectionwrap" id="div1">
+                    <legend><strong>المعلومات الأساسية</strong></legend>
+                    <div>
+                        <div class="labels">
+                            الاسم (الاسم الأول والعائلة فقط):
+                        </div>
+                        <input  style="size:50%" name="name" type="text" id="name" title="سيظهر بأعلى السيرة الذاتية" class="styles"  />
+						
+					</div>
+                    <div>
+                        <div class="labels">
+                            البريد اللإلكتروني:</div>
+                        <input name="mail" type="text" id="mail" title="بيانات الإتصال الأساسية، يجب التأكد من صحتها" class="styles " />
+                    </div>
+                    <div>
+                        <div class="labels">
+                            رقم الهاتف/الجوال:
+                        </div>
+                        <input name="phone" type="text" id="phone" title="رقم جوالك الحالي" class="styles " />
+                    </div>
+                    <div>
+                        <div class="labels">
+                           الاسم الكامل (ثلاثي أو رباعي):
+                        </div>
+                        <input name="fathersname" type="text" id="fathersname" title="كما هو مذكور بالوثائق الرسمية الأخرى" class="styles " style="" />
+                    </div>
+                    <div>
+                        <div class="labels">
+                            الوصف المهني:
+                        </div>
+                        <textarea name="objective" rows="2" cols="20" id="objective" title="وصف دقيق وواضح لمسارك المهني" >
+						</textarea>
+                    </div>
+                </fieldset>
+				
+				 <fieldset class="sectionwrap" id="div2">
+                    <legend><strong>معلومات المؤهل</strong></legend>
+                    <div>
+                        <table id="choosediploma" border="0">
+		<tr>
+			<td><input id="choosediploma_0" type="radio" name="choosediploma" value="1"
+						onclick="showDiploma(1)" /><label for="choosediploma_0">دبلوم</label></td>
+			<td><input id="choosediploma_1" type="radio" name="choosediploma" value="0" 
+						onclick="showDiploma(0)" /><label for="choosediploma_1">مؤهل آخر</label></td>
+		</tr>
+	</table>
+                    </div>
+                    <div>
+                        <h4>
+                            المؤهل الأول</h4>
+                    </div>
+                    <div class="labels">
+                        النسبة المؤية</div>
+                    <div>
+                        <input name="percentage10" type="text" id="percentage10" title="نسبة التخرج كما هو موضح بالشهادة" class="styles" />
+                    </div>
+                    <div class="labels">
+                      اسم المدرسة/المعهد/الجامعة مع التخصص</div>
+                    <div>
+                        <input name="school10" type="text" id="school10" title="اسم جهة التخرج والتخصص" class="styles" style="" />
+                        <div class="labels">
+                            سنة التخرج</div>
+                        <input name="year10" type="text" id="year10" title="كما هو موضح بالشهادة" class="styles" />
+                    </div>
+                    
+				<div id="optional_12">
+					<div>
+                        <h4>
+                            المؤهل الثاني</h4>
+                    </div>
+                    <div class="labels">
+                       النسبة المؤية</div>
+                    <div>
+                        <input name="percentage12" type="text" id="percentage12" title="نسبة التخرج كما هو موضح بالشهادة" class="styles" />
+                    </div>
+                    <div class="labels">
+                       اسم المدرسة/المعهد/الجامعة مع التخصص/div>
+                    <div>
+                        <input name="school12" type="text" id="school12" title="اسم جهة التخرج والتخصص" class="styles" style="" />
+                        <div class="labels">
+                            سنة التخرج</div>
+                        <input name="year12" type="text" id="year12" title="كما هو موضح بالشهادة" class="styles" />
+                    </div>
+                </div>				
+				<div id="optional_diploma">
+					<div>
+                        <h4>
+                            دبلوم</h4>
+                    </div>
+                    <div class="labels">
+                        النسبة المؤية</div>
+                    <div>
+                        <input name="percentage_diploma" type="text" id="percentage_diploma" title="نسبة التخرج كما هو موضح بالشهادة" class="styles" />
+                    </div>
+                    <div class="labels">
+                        اسم المعهد/الجامعة</div>
+                    <div>
+                        <input name="school_diploma" type="text" id="school_diploma" title="اسم جهة التخرج" class="styles" style="" />
+                        <div class="labels">
+                           سنة التخرج</div>
+                        <input name="year_diploma" type="text" id="year_diploma" title="كما هو موضح بالشهادة" class="styles" />
+                    </div>
+					<div>
+                        <div class="labels">
+                         التخصص</div>
+                        <input name="name_diploma" type="text" id="name_diploma" title="اسم الدبلوم" class="styles" />
+                    </div>
+                </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <h4>
+                                    بكالريوس/ماجستير/دكتوراه</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                نسبة التخرج
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="collegepercentage" type="text" id="collegepercentage" title="النسبة الموضحة بالشهادة" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                اسم الجامعة
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="college" type="text" id="college" title="اسم الجامعة التي انتسبت لها" class="styles" style="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                               سنة التخرج
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="collegeyear" type="text" id="collegeyear" title="سنة التخرج كما هو موضح بالشهادة" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                الترم الحالي
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="collegesem" type="text" id="collegesem" title="اكتب الترم الذي تدرسه حالياً إذا لم تتخرج بعد" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                اسم التخصص والكلية
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="collegecourse" type="text" id="collegecourse" title="التخصص الرئيسي والفرعي" class="styles" style="" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+				
+                <fieldset class="sectionwrap" id="div3">
+                    <legend><strong>الدورات التدريبية</strong></legend>
+                    <table>
+                        <tr>
+                            <td class="labels">
+                                اسم الجهة
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="stcomapnyname" type="text" id="stcomapnyname" title="اسم الجهة التي منحتك الدورة أو المحاضرة" class="styles" style="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                المدة (مع توضيح أيام/أشهر/سنوات مثل 3 أشهر)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="stduration" type="text" id="stduration" title="المدة الزمنية التي استغرقتها لإجتياز أو حضور الدورة" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                موضوع الدورة/المحاضرة
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="stproject" type="text" id="stproject" title="اسم الدورة أو الموضوع الأساسي التي تم مناقشته" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                التقنيات والأدوات المستخدمة (مثل تطبيق عملي أو استخدام أجهزة محددة ...الخ)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="sttechnology" type="text" id="sttechnology" title="التقنيات المستخدمة مثل الأجهزة أو الأنظمة أو تطبيق عملي أم نظري أم على الحاسب" class="styles" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div4">
+                    <legend><strong>مهام ومسؤوليات</strong></legend>
+                    <br />
+                    اسم المهمة أو المشروع المنجز<br />
+                    <input name="projectfinalyear" type="text" id="projectfinalyear" title="مثال مشاريع فردية أو أعمال أنجزتها بأحد الشركات كتأسيس إدارة أو وضع سياسة أو فتح فرع أو صنع برنامج" class="styles" />
+                   
+                    <button name="btngenerateproject" type="button" value="أضف مهمة/مشروع إضافي" id="btngenerateproject" onclick="generateTextbox('project')">أضف مشروع آخر</button>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div5">
+                    <legend><strong>شهادات وجوائز</strong></legend>
+                    
+                    <br />
+                    <button name="btngenerateaccomplishment" type="button" value="أضف شهادة/جائزة" id="btngenerateaccomplishment" onclick="generateTextbox('achievement')">أضف شهادة/جائزة</button>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div6">
+                    <legend><strong>المهارات</strong></legend>
+                    <br />
+                    أضف مهارة واحدة بكل سطر مثل (اتقان لغة برمجة/التعامل مع اجهزة محددة/مهارة إدارية ...إلخ)<br />
+                    <input name="mandatoryskill" type="text" id="mandatoryskill" title="Technical Skills" class="labels" />
+                    
+                    <button name="btngenerateskill" type="button" value="أضف مهارة جديدة" id="btngenerateskill" onclick="generateTextbox('skill')">أضف مهارة جديدة</button>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div7">
+                    <legend><strong>الإهتمامات والهوايات (مثل أسعى للحصول على شهادة مهنية/تعلم لغة جديدة ...إلخ)</strong></legend>
+                    <br />
+                    
+                    <button name="btngenerateinterest" type="button" value="أضف إهتمام/هواية" id="btngenerateinterest" onclick="generateTextbox('interest')">أضف اهتمام/هواية</button>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div8">
+                    <legend><strong>معلومات شخصية</strong></legend>
+                    <table>
+                        <tr>
+                            <td class="labels">
+                                تاريخ الميلاد
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="dob" type="text" id="dob" title="يوضح به اليوم والشهر والسنة" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                رقم الجوال
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="landline" type="text" id="landline" title="رقم الجوال الأساسي" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                رقم جوال إضافي (رقم أحد الأقارب أو رقم الطوارئ)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="otherno" type="text" id="otherno" title="رقم هاتف إضافي للتواصل بحالة كان هاتفك مغلق" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                الجنسية
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="nationality" type="text" id="nationality" title="ذكر اسم البلد الذي تحمل جنسيته" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                               العنوان الدائم
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="permanentaddress" type="text" id="permanentaddress" title="عنوان سكنك الدائم" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                العنوان الحالي أو المؤقت ان وجد
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="currentaddress" type="text" id="currentaddress" title="العنوان المؤقت الذي تسكن به حالياً" class="styles" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset class="sectionwrap" id="div9">
+                    <legend><strong>بيانات نسخة السيرة الذاتية</strong></legend>
+                    <table>
+                        <tr>
+                            <td class="labels">
+                                تاريخ اليوم
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="date" type="text" id="date" title="التاريخ الذي تم إعداد السيرة الذاتية" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                الساعة (أربع خانات مثل 03:40)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="time" type="text" id="time" title="الوقت الذي تم إعداد السيرة الذاتية" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                البلد والمدينة (مثال السعودية - الرياض)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input name="place" type="text" id="place" title="الموقع الذي تم فيه إعداد هذه النسخة" class="styles" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                حدد شكل السيرة الذاتية
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                
+                                <table id="TemplateList" border="0">
+		<tr>
+			<td><input id="TemplateList_0" type="radio" name="TemplateList" value="1" />
+			<label for="TemplateList_0"><img src = "images/CV4.jpg" align = "center" style="width:50%"/></label>
+			</td><td><input id="TemplateList_1" type="radio" name="TemplateList" value="2" />
+			<label for="TemplateList_1"><img src = "images/CV3.jpg" align = "center" style="width:50%"></label>
+			</td><td><input id="TemplateList_2" type="radio" name="TemplateList" value="3" />
+			<label for="TemplateList_2"><img src = "images/CV2.jpg" align = "center" style="width:50%"></label>
+			</td><td><input id="TemplateList_3" type="radio" name="TemplateList" value="4" />
+			<label for="TemplateList_3"><img src = "images/CV1.jpg" align = "center" style="width:50%"></label></td>
+		</tr>
+	</table>
+                           </td>
+                        </tr>
+                        <tr>
+                            <td class="labels">
+                                <input type="submit" name="btn" value="نصدير السيرة الذاتية" id="btn" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+		</form>
+	</body>
+</html>

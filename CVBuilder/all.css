@@ -1,0 +1,58 @@
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 1;
+        padding: 1;
+        background-color: #ffffff;
+        
+line-height: 1.1 !important;
+    }
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 0mm;
+        margin: auto;
+        border: 4px #ffffff solid !important;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .subpage {
+        padding: 1cm;
+        border: 5px red solid;
+        height: 257mm;
+        outline: 2cm #FFEAEA solid;
+    }
+    
+    @page {
+        size: A4;
+        margin: 0;
+  
+    }
+
+  .template { width: auto; height: auto; left:0; top:0; }
+  img { width:100%; }
+img { height:100%; }
+  li { margin: 0 0 10px 20px !important;}
+}
+    @media print {
+
+        html, body {
+            width: 210mm;
+            height: 297mm;        
+        }
+        .page {
+            margin: 0;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+        }
+    }
